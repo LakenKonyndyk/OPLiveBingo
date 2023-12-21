@@ -50,6 +50,8 @@ onValue(peopleRef, (snapshot) => {
 
 async function incrementWins() {
     var winsvalue = await get(ref(database, "People/"+playerName+"/Wins"));
+    const causeRef = ref(database, 'People/'+playerName+'/WinCause');
+    set(causeRef,winningSquaresString)
     const nameRef = ref(database, 'People/'+playerName+'/Wins');
     set(nameRef,winsvalue.val()+1)
     document.getElementById("wins").innerText = "Wins: "+(winsvalue.val()+1)
@@ -175,13 +177,13 @@ function checkIfWin() {
 }
 
 function promptWin() {
-    var winningSquaresString = ""
+    winningSquaresString = ""
     for (let i=0;i<winningSquares.length;i++) {
         if (!winningSquaresString.includes(document.getElementById(winningSquares[i]).innerText)) {
             winningSquaresString=winningSquaresString+document.getElementById(winningSquares[i]).innerText+", "
         }
     }
-    var winningSquaresString = winningSquaresString.slice(0, -2) + "."
+    winningSquaresString = winningSquaresString.slice(0, -2) + "."
     document.getElementById("confirmationspacesdisplay").innerText = winningSquaresString
     document.getElementById("popupback").style.display = "inline";
     document.getElementById("confirmationpopup").style.display = "flex";
@@ -192,6 +194,7 @@ function promptWin() {
 
 var boxesAreClickable = true
 var activatedBoxes = []
+var winningSquaresString = ""
 
 for (let i=0; i<25; i++) {
     document.getElementById("square"+i).addEventListener('click',function() {
