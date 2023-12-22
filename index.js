@@ -126,7 +126,21 @@ function resetBoard() {
             document.getElementById("square"+i).style.backgroundColor = "rgb(66, 66, 66)"
         }
     }
+    adjustFontSize();
 }
+
+function adjustFontSize() {
+    var cells = document.querySelectorAll('td');
+    cells.forEach(function(cell) {
+        cell.style.fontSize = 'inherit';
+        var initialFontSize = parseInt(window.getComputedStyle(cell).fontSize, 10);
+        var maxWidth = cell.clientWidth;
+        var textWidth = cell.scrollWidth;
+        var fontSize = Math.min(initialFontSize, Math.floor((maxWidth / textWidth) * initialFontSize));
+        cell.style.fontSize = fontSize + 'px';
+    });
+}
+window.addEventListener('resize', adjustFontSize);
 
 var winningSquares = []
 

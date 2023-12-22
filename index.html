@@ -22,11 +22,22 @@
             border-collapse: collapse;
             background-color: rgb(66, 66, 66);
             box-shadow: 0 0 50px black;
-            container-name: boxtable;
+            font-size-adjust: inherit;
         }
         @media (max-width: 80vh) {
-            td, th {
-                font-size: .75em;
+            #popupinside {
+                width: 80vw; margin-left: 10vw;
+            }
+            th {
+                font-size: 20vw;
+            }
+        }
+        @media (min-width: 150vh) {
+            #popupinside {
+                width: 50vw; margin-left: 25vw;
+            }
+            th {
+                font-size: 4em;
             }
         }
         td, th {
@@ -37,11 +48,9 @@
             height: 10vh;
             text-align: center;
             max-width: 0;
-            word-wrap: break-word;
         }
         th {
             color: #F40C84;
-            font-size: 2rem;
             font-weight: bold;
         }
         html, body {
@@ -126,12 +135,12 @@
     </div>
     <a id="wins" style="font-family: MetroPolice; color:white;font-size: 8vh; position: fixed; left:5vw; bottom: 0;">Wins: 0</a>
     <div id="popupback" style="display:flexbox; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); transition: opacity 500ms; visibility: visible; opacity: 1;">
-        <div id="popupinside" style="background-color: #222222; width: 50vw; margin-left: 25vw; border-radius: 25px;">
+        <div id="popupinside" style="background-color: #222222; border-radius: 25px;">
             <header id="namepopup" style="display: flexbox; color: white; margin-top: 30vh; padding: 3vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
-                <input id="nameinput" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 3vw; width: 90%; border-radius: 1vh; margin-bottom: 1vh; max-width: 450px; max-height: 100px;">
+                <input id="nameinput" type="text" placeholder="Enter Your Name" style="text-align:center;padding: 1vh; font-size: 3vw; width: 90%; border-radius: 1vh; margin-bottom: 1vh; max-width: 450px; max-height: 100px;">
                 <button id="namebutton" style="padding: 1vh; background-color: black; border-style: solid; color:white; font-size: 3vw; border-radius: 20%; cursor: pointer;max-height: 100px;">Join</button>
             </header>
-            <header id="winpopup" style="display:none; color: white; margin-top: 30vh; padding: 3vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
+            <header id="winpopup" style="display:none; color: white; margin-top: 30vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
                 <header id="windisplay1" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 4vh; width: 90%; border-radius: 1vh; margin-bottom: 1vh; font-family: MetroPolice; word-wrap: break-word;color:#05C2BC;">n/a Won!</header>
                 <div id="winnerswinsdisplay" style="font-family: MetroPolice; word-wrap: break-word; color:#F40C84;margin-bottom: 1vh;">n/a Has 0 Wins</div>
                 <div style="font-family: MetroPolice; word-wrap: break-word; color:white;">Winning Spaces:</div>
