@@ -214,6 +214,7 @@ for (let i=0; i<25; i++) {
     document.getElementById("square"+i).addEventListener('click',function() {
         if (boxesAreClickable) {
             console.log("CLICKED SQUARE"+i)
+            adjustFontSize();
             if (activatedBoxes.includes("square"+i)) {
                 activatedBoxes.splice(activatedBoxes.indexOf('square'+i), 1)
                 document.getElementById("square"+i).style.backgroundColor = "rgb(66, 66, 66)"
