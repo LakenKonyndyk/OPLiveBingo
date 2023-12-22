@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, set, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import confetti from "https://esm.run/canvas-confetti@1";
 
 var playerName = ""
 
@@ -210,7 +211,18 @@ function promptWin() {
     console.log(winningSquaresString)
 }
 
-var boxesAreClickable = true
+document.getElementById("some_input")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        if (!boxesAreClickable) {
+            boxesAreClickable = true
+            join(document.getElementById("nameinput").value)
+        }
+    }
+});
+
+var boxesAreClickable = false
 var activatedBoxes = []
 var winningSquaresString = ""
 
@@ -254,7 +266,8 @@ async function join(name) {
 document.addEventListener('DOMContentLoaded', function() {
     var joinButton = document.getElementById('namebutton');
     joinButton.addEventListener('click', function() {
-      join(document.getElementById("nameinput").value)
+        boxesAreClickable = true
+        join(document.getElementById("nameinput").value)
     });
 
     var confirmButton = document.getElementById('confirmwinbutton');
@@ -263,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("popupback").style.display = "none";
         incrementWins()
         resetBoard()
+        confetti({particleCount: 150,spread: 100});
     });
     var cancelConfirmationButton = document.getElementById('cancelconfirmation');
     cancelConfirmationButton.addEventListener('click', function() {
