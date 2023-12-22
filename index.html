@@ -15,11 +15,18 @@
             display: flex;
         }
         table {
-            width: 468px;
-            height: 560px;
+            max-width: 468px;
+            max-height: 75vh;
+            width: 80vw;
+            height: 80vw;
             border-collapse: collapse;
             background-color: rgb(66, 66, 66);
             box-shadow: 0 0 50px black;
+        }
+        @media (max-width: 720px) {
+            th, td {
+                font-size: 14px; /* Adjust the text size for smaller screens */
+            }
         }
         td, th {
             font-family: MetroPolice;
@@ -27,13 +34,14 @@
             color:white;
             width: 40vw;
             height: 10vh;
-            word-wrap: break-word;
             text-align: center;
-            max-width: 90px;
+            max-width: 0;
+            font-size: 1rem;
+            word-wrap: break-word;
         }
         th {
             color: #F40C84;
-            font-size: 8vw;
+            font-size: 2rem;
             font-weight: bold;
         }
         html, body {
