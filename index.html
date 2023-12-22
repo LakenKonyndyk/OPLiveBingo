@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OP Live Bingo</title>
     <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
     <style>
@@ -16,16 +16,17 @@
         }
         table {
             max-width: 468px;
-            max-height: 75vh;
-            width: 80vw;
+            max-height: 70vh;
+            width: 95vw;
             height: 80vw;
             border-collapse: collapse;
             background-color: rgb(66, 66, 66);
             box-shadow: 0 0 50px black;
+            container-name: boxtable;
         }
-        @media (max-width: 720px) {
-            th, td {
-                font-size: 14px; /* Adjust the text size for smaller screens */
+        @media (max-width: 50vh) {
+            td, th {
+                font-size: .65em;
             }
         }
         td, th {
@@ -36,7 +37,6 @@
             height: 10vh;
             text-align: center;
             max-width: 0;
-            font-size: 1rem;
             word-wrap: break-word;
         }
         th {
@@ -128,8 +128,8 @@
     <div id="popupback" style="display:flexbox; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); transition: opacity 500ms; visibility: visible; opacity: 1;">
         <div id="popupinside" style="background-color: #222222; width: 50vw; margin-left: 25vw; border-radius: 25px;">
             <header id="namepopup" style="display: flexbox; color: white; margin-top: 30vh; padding: 3vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
-                <input id="nameinput" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 4vw; width: 90%; border-radius: 1vh; margin-bottom: 1vh;">
-                <button id="namebutton" style="padding: 1vh; background-color: black; border-style: solid; color:white; font-size: 2vh; border-radius: 20%; cursor: pointer;">Join</button>
+                <input id="nameinput" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 3vw; width: 90%; border-radius: 1vh; margin-bottom: 1vh; max-width: 450px; max-height: 100px;">
+                <button id="namebutton" style="padding: 1vh; background-color: black; border-style: solid; color:white; font-size: 3vw; border-radius: 20%; cursor: pointer;max-height: 100px;">Join</button>
             </header>
             <header id="winpopup" style="display:none; color: white; margin-top: 30vh; padding: 3vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
                 <header id="windisplay1" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 4vh; width: 90%; border-radius: 1vh; margin-bottom: 1vh; font-family: MetroPolice; word-wrap: break-word;color:#05C2BC;">n/a Won!</header>
