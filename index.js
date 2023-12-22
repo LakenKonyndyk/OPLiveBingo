@@ -142,6 +142,10 @@ function adjustFontSize() {
 }
 window.addEventListener('resize', adjustFontSize);
 
+window.onload = function() {
+    adjustFontSize();
+};
+
 var winningSquares = []
 
 const downdiag = ["square0","square6","square8","square18","square24"]

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OP Live Bingo</title>
     <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
     <style>
@@ -32,9 +32,9 @@
                 font-size: 20vw;
             }
         }
-        @media (min-width: 150vh) {
+        @media (min-width: 80vh) {
             #popupinside {
-                width: 50vw; margin-left: 25vw;
+                width: 40vw; margin-left: 30vw;
             }
             th {
                 font-size: 4em;
@@ -144,7 +144,7 @@
             <header id="winpopup" style="display:none; color: white; margin-top: 30vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
                 <header id="windisplay1" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 4vh; width: 90%; border-radius: 1vh; margin-bottom: 1vh; font-family: MetroPolice; word-wrap: break-word;color:#05C2BC;">n/a Won!</header>
                 <div id="winnerswinsdisplay" style="font-family: MetroPolice; word-wrap: break-word; color:#F40C84;margin-bottom: 1vh;">n/a Has 0 Wins</div>
-                <div style="font-family: MetroPolice; word-wrap: break-word; color:white;">Winning Spaces:</div>
+                <div style="font-family: MetroPolice; word-wrap: break-word; width: 100%; color:white;">Winning Spaces:</div>
                 <div id="winningspacesdisplay" style="font-family: MetroPolice; word-wrap: break-word; color:white;margin-bottom: 1vh;"></div>
                 <button id="resetboardbutton" style="padding: 1vh; background-color: black; border-style: solid; color:white; font-size: 2vh; border-radius: 10%; cursor: pointer;">Reset Board</button>
             </header>
@@ -152,7 +152,7 @@
                 <header type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 4vh; width: 90%; border-radius: 1vh; margin-bottom: 1vh; font-family: MetroPolice; word-wrap: break-word;color:#05C2BC;">BINGO?</header>
                 <div style="font-family: MetroPolice; word-wrap: break-word; color:#F40C84;margin-bottom: 1vh;width: 100%;">Confirm Your Win:</div>
                 <div style="font-family: MetroPolice; word-wrap: break-word; color:white;width: 100%;">Winning Spaces:</div>
-                <div id="confirmationspacesdisplay" style="font-family: MetroPolice; word-wrap: break-word; color:white;margin-bottom: 1vh;"></div>
+                <div id="confirmationspacesdisplay" style="font-family: MetroPolice; word-wrap: break-word; color:white;margin-bottom: 1vh; width: 100%;"></div>
                 <button id="confirmwinbutton" style="padding: 1vh; margin-right: 2vw; background-color: #F40C84; border-style: solid; color:white; font-size: 2vh; border-radius: 10%; cursor: pointer;">Confirm</button>
                 <button id="cancelconfirmation" style="padding: 1vh; background-color: black; border-style: solid; color:white; font-size: 2vh; border-radius: 10%; cursor: pointer;">Cancel</button>
             </header>
