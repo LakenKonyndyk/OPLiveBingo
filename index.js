@@ -211,10 +211,8 @@ function promptWin() {
     console.log(winningSquaresString)
 }
 
-document.getElementById("some_input")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
         if (!boxesAreClickable) {
             boxesAreClickable = true
             join(document.getElementById("nameinput").value)
