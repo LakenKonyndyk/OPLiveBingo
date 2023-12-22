@@ -279,12 +279,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("popupback").style.display = "none";
         resetBoard()
     });
-    document.addEventListener('keydown', function(event) {
+    document.getElementById("nameinput").addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             if (!boxesAreClickable) {
                 boxesAreClickable = true
                 join(document.getElementById("nameinput").value)
             }
         }
-    });
+      });
 });
