@@ -10,7 +10,13 @@
             font-family: 'MetroPolice';
             src: url(otfs/METRO\ POLICE\ REGULAR.otf) format('opentype');
         }
+        #bingoholder {
+            justify-content: center;
+            display: flex;
+        }
         table {
+            width: 468px;
+            height: 560px;
             border-collapse: collapse;
             background-color: rgb(66, 66, 66);
             box-shadow: 0 0 50px black;
@@ -20,22 +26,21 @@
             border: 4px solid #222222;
             color:white;
             width: 40vw;
+            height: 10vh;
             word-wrap: break-word;
             text-align: center;
-            height: 10vh;
+            max-width: 90px;
         }
         th {
             color: #F40C84;
-            font-size: 40px;
+            font-size: 8vw;
             font-weight: bold;
-        }
-        #free {
-            font-size: 3vh;
         }
         html, body {
             user-select: none;
             margin: 0;
             padding: 2vw;
+            padding-top: 0;
             height: 100%;
         }
         body {
@@ -46,9 +51,10 @@
             overflow: hidden;
         }
         #opliveheader {
-            background-image: url(imgs/OPlogo2.png);
+            background-image: url(imgs/OPlogo1.png);
             height: 15vh;
-            background-size: cover;
+            object-fit: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -63,57 +69,58 @@
     </style>
 </head>
 <body>
-    <header id="opliveheader">
-    </header>
-    <table>
-        <tr>
-            <th>B</th>
-            <th>I</th>
-            <th>N</th>
-            <th>G</th>
-            <th>O</th>
-        </tr>
-        <tr>
-            <td id="square0">empty</td>
-            <td id="square5">empty</td>
-            <td id="square11">empty</td>
-            <td id="square15">empty</td>
-            <td id="square20">empty</td>
-        </tr>
-        <tr>
-            <td id="square1">empty</td>
-            <td id="square6">empty</td>
-            <td id="square12">empty</td>
-            <td id="square16">empty</td>
-            <td id="square21">empty</td>
-        </tr>
-        <tr>
-            <td id="square2">empty</td>
-            <td id="square7">empty</td>
-            <td id="square8">empty</td>
-            <td id="square17">empty</td>
-            <td id="square22">empty</td>
-        </tr>
-        <tr>
-            <td id="square3">empty</td>
-            <td id="square9">empty</td>
-            <td id="square13">empty</td>
-            <td id="square18">empty</td>
-            <td id="square23">empty</td>
-        </tr>
-        <tr>
-            <td id="square4">empty</td>
-            <td id="square10">empty</td>
-            <td id="square14">empty</td>
-            <td id="square19">empty</td>
-            <td id="square24">empty</td>
-        </tr>
-    </table>
-    <header id="wins" style="font-family: MetroPolice; color:white;font-size: 8vh;">Wins: 0</header>
+    <header id="opliveheader"></header>
+    <div id="bingoholder">
+        <table>
+            <tr>
+                <th>B</th>
+                <th>I</th>
+                <th>N</th>
+                <th>G</th>
+                <th>O</th>
+            </tr>
+            <tr>
+                <td id="square0">empty</td>
+                <td id="square5">empty</td>
+                <td id="square11">empty</td>
+                <td id="square15">empty</td>
+                <td id="square20">empty</td>
+            </tr>
+            <tr>
+                <td id="square1">empty</td>
+                <td id="square6">empty</td>
+                <td id="square12">empty</td>
+                <td id="square16">empty</td>
+                <td id="square21">empty</td>
+            </tr>
+            <tr>
+                <td id="square2">empty</td>
+                <td id="square7">empty</td>
+                <td id="square8">empty</td>
+                <td id="square17">empty</td>
+                <td id="square22">empty</td>
+            </tr>
+            <tr>
+                <td id="square3">empty</td>
+                <td id="square9">empty</td>
+                <td id="square13">empty</td>
+                <td id="square18">empty</td>
+                <td id="square23">empty</td>
+            </tr>
+            <tr>
+                <td id="square4">empty</td>
+                <td id="square10">empty</td>
+                <td id="square14">empty</td>
+                <td id="square19">empty</td>
+                <td id="square24">empty</td>
+            </tr>
+        </table>
+    </div>
+    <a id="wins" style="font-family: MetroPolice; color:white;font-size: 8vh; position: fixed; left:5vw; bottom: 0;">Wins: 0</a>
     <div id="popupback" style="display:flexbox; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); transition: opacity 500ms; visibility: visible; opacity: 1;">
         <div id="popupinside" style="background-color: #222222; width: 50vw; margin-left: 25vw; border-radius: 25px;">
             <header id="namepopup" style="display: flexbox; color: white; margin-top: 30vh; padding: 3vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
-                <input id="nameinput" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: large; width: 90%; border-radius: 1vh; margin-bottom: 1vh;">
+                <input id="nameinput" type="text" placeholder="Enter Your Name" style="padding: 1vh; font-size: 4vw; width: 90%; border-radius: 1vh; margin-bottom: 1vh;">
                 <button id="namebutton" style="padding: 1vh; background-color: black; border-style: solid; color:white; font-size: 2vh; border-radius: 20%; cursor: pointer;">Join</button>
             </header>
             <header id="winpopup" style="display:none; color: white; margin-top: 30vh; padding: 3vh; text-align: center; box-shadow: 0 0 50px black; justify-content: center;">
