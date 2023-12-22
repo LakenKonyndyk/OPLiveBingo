@@ -127,6 +127,7 @@ function resetBoard() {
             document.getElementById("square"+i).style.backgroundColor = "rgb(66, 66, 66)"
         }
     }
+    localStorage.setItem('board', JSON.stringify(taken));
     adjustFontSize();
 }
 
@@ -214,26 +215,17 @@ function promptWin() {
 var boxesAreClickable = false
 var activatedBoxes = []
 var winningSquaresString = ""
+var storedarrayofSelected = []
+var storedarrayofFullBoard = []
 
-for (let i=0; i<25; i++) {
-    document.getElementById("square"+i).addEventListener('click',function() {
-        if (boxesAreClickable) {
-            console.log("CLICKED SQUARE"+i)
-            adjustFontSize();
-            if (activatedBoxes.includes("square"+i)) {
-                activatedBoxes.splice(activatedBoxes.indexOf('square'+i), 1)
-                document.getElementById("square"+i).style.backgroundColor = "rgb(66, 66, 66)"
-            } else {
-                document.getElementById("square"+i).style.backgroundColor = "#F40C84"
-                activatedBoxes.push("square"+i)
-                winningSquares = []
-                checkIfWin()
-                if (!(winningSquares.length==0)) {
-                    promptWin()
-                }
-            }
-        }
-    })
+function loadboard() {
+    for (let i=0;i<storedarrayofFullBoard.length;i++) {
+        document.getElementById("square"+i).innerText = storedarrayofFullBoard[i]
+    }
+    for (let i=0;i<storedarrayofSelected.length;i++) {
+        document.getElementById(storedarrayofSelected[i]).style.backgroundColor = "#F40C84"
+        activatedBoxes.push(storedarrayofSelected[i])
+    }
 }
 
 async function join(name) {
@@ -246,7 +238,19 @@ async function join(name) {
             addPerson(name);
         }
         playerName = name
-        resetBoard();
+        var arrayofSelected = localStorage.getItem('selected');
+        var arrayofFullBoard = localStorage.getItem('board');
+        if ((arrayofSelected !== null)&&(arrayofFullBoard !== null)) {
+            storedarrayofSelected = JSON.parse(arrayofSelected);
+            storedarrayofFullBoard = JSON.parse(arrayofFullBoard);
+            if (storedarrayofFullBoard.length == 25) {
+                loadboard()
+            } else {
+                resetBoard()
+            }
+        } else {
+            resetBoard();
+        }
         document.getElementById("namepopup").style.display = "none";
         document.getElementById("popupback").style.display = "none";
     }
@@ -286,5 +290,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 join(document.getElementById("nameinput").value)
             }
         }
-      });
+    });
+    for (let i=0; i<25; i++) {
+        document.getElementById("square"+i).addEventListener('click',function() {
+            if (boxesAreClickable) {
+                console.log("CLICKED SQUARE"+i)
+                adjustFontSize();
+                if (activatedBoxes.includes("square"+i)) {
+                    activatedBoxes.splice(activatedBoxes.indexOf('square'+i), 1)
+                    document.getElementById("square"+i).style.backgroundColor = "rgb(66, 66, 66)"
+                    localStorage.setItem('selected', JSON.stringify(activatedBoxes));
+                } else {
+                    document.getElementById("square"+i).style.backgroundColor = "#F40C84"
+                    activatedBoxes.push("square"+i)
+                    winningSquares = []
+                    checkIfWin()
+                    if (!(winningSquares.length==0)) {
+                        promptWin()
+                    }
+                    localStorage.setItem('selected', JSON.stringify(activatedBoxes));
+                }
+            }
+        })
+    }
 });
