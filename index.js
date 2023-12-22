@@ -211,15 +211,6 @@ function promptWin() {
     console.log(winningSquaresString)
 }
 
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        if (!boxesAreClickable) {
-            boxesAreClickable = true
-            join(document.getElementById("nameinput").value)
-        }
-    }
-});
-
 var boxesAreClickable = false
 var activatedBoxes = []
 var winningSquaresString = ""
@@ -287,5 +278,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("winpopup").style.display = "none";
         document.getElementById("popupback").style.display = "none";
         resetBoard()
+    });
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            if (!boxesAreClickable) {
+                boxesAreClickable = true
+                join(document.getElementById("nameinput").value)
+            }
+        }
     });
 });
