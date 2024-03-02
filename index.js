@@ -74,7 +74,7 @@ function addPerson(name) {
 
 const spacesList = [
     "Naked Person",
-    "Smoking In Handcuffs",
+    "Car Crash",
     "Gas Station Call",
     "Rowdy Crowd",
     "Fight",
