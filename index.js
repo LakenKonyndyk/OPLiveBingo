@@ -74,7 +74,7 @@ function addPerson(name) {
 
 const spacesList = [
     "Naked Person",
-    "Car Crash",
+    "Smoking In Handcuffs",
     "Gas Station Call",
     "Rowdy Crowd",
     "Fight",
@@ -105,7 +105,9 @@ const spacesList = [
     "Traffic Stop",
     "Open Container",
     "No Speak English",
-    "Field Sobriety Test"
+    "Field Sobriety Test",
+    "'Its just a documentary'",
+    "Challenger / Charger",
 ]
 
 function resetBoard() {
@@ -245,6 +247,7 @@ async function join(name) {
             storedarrayofFullBoard = JSON.parse(arrayofFullBoard);
             if (storedarrayofFullBoard.length == 25) {
                 loadboard()
+                adjustFontSize();
             } else {
                 resetBoard()
             }
