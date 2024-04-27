@@ -74,7 +74,6 @@ function addPerson(name) {
 
 const spacesList = [
     "Naked Person",
-    "Smoking In Handcuffs",
     "Gas Station Call",
     "Rowdy Crowd",
     "Fight",
@@ -107,7 +106,7 @@ const spacesList = [
     "No Speak English",
     "Field Sobriety Test",
     "'Its just a documentary'",
-    "Challenger / Charger",
+    "Charger / Challenger",
 ]
 
 function resetBoard() {
