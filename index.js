@@ -107,6 +107,7 @@ const spacesList = [
     "Field Sobriety Test",
     "'Its just a documentary'",
     "Charger / Challenger",
+    "'I gotchu'",
 ]
 
 function resetBoard() {
